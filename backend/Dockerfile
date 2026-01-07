@@ -1,0 +1,8 @@
+FROM node:20-alpine
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN apk add --no-cache wget
+RUN npm install --production
+COPY src ./src
+EXPOSE 5000
+CMD ["node", "src/server.js"]

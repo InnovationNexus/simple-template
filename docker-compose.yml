@@ -1,0 +1,31 @@
+services:
+  backend:
+    build: ./backend
+    container_name: your-project-backend
+    networks:
+      - your_project_net
+    # Optional: uncomment to use .env file
+    # env_file:
+    #   - ./backend/.env
+    environment:
+      - ALLOWED_ORIGINS=https://YOUR_DOMAIN_HERE,https://www.YOUR_DOMAIN_HERE,http://YOUR_DOMAIN_HERE,http://www.YOUR_DOMAIN_HERE
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:5000/health"]
+      interval: 20s
+      timeout: 3s
+      retries: 5
+
+  frontend:
+    build: ./frontend
+    container_name: your-project-frontend
+    networks:
+      - your_project_net
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost"]
+      interval: 20s
+      timeout: 3s
+      retries: 5
+
+networks:
+  your_project_net:
+    external: true
