@@ -24,8 +24,8 @@ async function sendInquiry({ name, email, message }) {
   const mailOptions = {
     from: config.mail.from,
     to: config.mail.to,
-    subject: `Domain inquiry from ${name || 'prospective buyer'}`,
-    text: `A new inquiry has been submitted.\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    subject: `Bonsai Club inquiry from ${name || 'interested person'}`,
+    text: `A new club inquiry has been submitted.\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
   if (transporter) {

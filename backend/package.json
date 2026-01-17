@@ -1,7 +1,7 @@
 {
-  "name": "your-project-backend",
+  "name": "bonsaiclub-backend",
   "version": "1.0.0",
-  "description": "Express API for domain sale landing page",
+  "description": "Express API for the Bonsai Club of South Carolina website",
   "main": "src/server.js",
   "type": "commonjs",
   "scripts": {

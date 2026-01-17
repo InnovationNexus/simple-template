@@ -33,19 +33,19 @@ function ContactForm({ onSubmit, submitting }) {
           name="email"
           value={formState.email}
           onChange={handleChange}
-          placeholder="you@example.com"
+          placeholder="you@yourdomain.com"
           required
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="message">
-        <Form.Label>Offer or message</Form.Label>
+        <Form.Label>Message</Form.Label>
         <Form.Control
           as="textarea"
           rows={4}
           name="message"
           value={formState.message}
           onChange={handleChange}
-          placeholder="Share your offer, timeline, or any questions."
+          placeholder="Tell us about your experience and interests (e.g., workshops, beginner help, plant swap)."
           required
         />
       </Form.Group>

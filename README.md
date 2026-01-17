@@ -1,6 +1,6 @@
-# YOUR_PROJECT_NAME
+# Bonsai Club of South Carolina Website
 
-A minimal domain-for-sale landing page with a secure Express backend and a Vite + React frontend.
+A minimal site for the Bonsai Club of South Carolina with an Express backend for contact submissions and a Vite + React frontend.
 
 ## Project structure
 
@@ -62,7 +62,7 @@ POST `/api/inquiry`
 ```json
 {
   "name": "Optional name",
-  "email": "buyer@example.com",
+  "email": "contact@bonsaiclubofsc.com",
   "message": "Offer details"
 }
 ```

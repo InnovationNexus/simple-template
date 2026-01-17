@@ -4,16 +4,16 @@ function CallToAction() {
   return (
     <Card className="glass-card text-light text-center py-4">
       <Card.Body>
-        <Card.Title className="display-6 mb-3">Ready to make an offer?</Card.Title>
+        <Card.Title className="display-6 mb-3">Ready to join?</Card.Title>
         <Card.Text className="text-secondary">
-          Tell us about your project and we will reply with pricing and next steps.
+          Become a member or attend a meeting — tell us what you're interested in and we'll be in touch.
         </Card.Text>
         <Button
           variant="warning"
           size="lg"
           onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
         >
-          Contact the owner
+          Get in touch
         </Button>
       </Card.Body>
     </Card>
