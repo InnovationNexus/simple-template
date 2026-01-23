@@ -1,31 +1,45 @@
+version: '3.8'
+
 services:
   backend:
     build: ./backend
-    container_name: your-project-backend
+    container_name: bonsaiclubofsc-backend
     networks:
-      - your_project_net
-    # Optional: uncomment to use .env file
-    # env_file:
-    #   - ./backend/.env
+      - bonsaiclubofsc_net
+    env_file:
+      - ./backend/.env
     environment:
-      - ALLOWED_ORIGINS=https://YOUR_DOMAIN_HERE,https://www.YOUR_DOMAIN_HERE,http://YOUR_DOMAIN_HERE,http://www.YOUR_DOMAIN_HERE
+      - NODE_ENV=production
+      - ALLOWED_ORIGINS=https://bonsaiclubofsc.com,https://www.bonsaiclubofsc.com,http://localhost:5173
+    ports:
+      - "5000:5000"
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:5000/health"]
+      test: ["CMD", "wget", "-qO-", "http://localhost:5000/api/health"]
       interval: 20s
       timeout: 3s
       retries: 5
+    restart: unless-stopped
 
   frontend:
-    build: ./frontend
-    container_name: your-project-frontend
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_PROXY=http://backend:5000
+    container_name: bonsaiclubofsc-frontend
     networks:
-      - your_project_net
+      - bonsaiclubofsc_net
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost"]
       interval: 20s
       timeout: 3s
       retries: 5
+    restart: unless-stopped
 
 networks:
-  your_project_net:
-    external: true
+  bonsaiclubofsc_net:
+    driver: bridge

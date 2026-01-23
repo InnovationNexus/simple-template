@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="trunk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5A2B"/>
+      <stop offset="100%" style="stop-color:#5D3A1A"/>
+    </linearGradient>
+    <linearGradient id="foliage" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#166534"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Pot -->
+  <path d="M30 85 L35 75 L65 75 L70 85 Z" fill="#6B4423"/>
+  <rect x="32" y="72" width="36" height="4" rx="1" fill="#8B5A2B"/>
+  
+  <!-- Trunk -->
+  <path d="M48 72 Q45 60 42 50 Q40 42 45 35" stroke="url(#trunk)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M52 72 Q55 55 50 40" stroke="url(#trunk)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Foliage clouds -->
+  <ellipse cx="35" cy="30" rx="15" ry="12" fill="url(#foliage)"/>
+  <ellipse cx="55" cy="25" rx="18" ry="14" fill="url(#foliage)"/>
+  <ellipse cx="45" cy="18" rx="12" ry="10" fill="url(#foliage)"/>
+  <ellipse cx="65" cy="35" rx="12" ry="10" fill="url(#foliage)"/>
+  <ellipse cx="50" cy="38" rx="14" ry="11" fill="url(#foliage)"/>
+</svg>

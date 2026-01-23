@@ -1,0 +1,11 @@
+# Robots.txt for bonsaiclubofsc.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bonsaiclubofsc.com/sitemap.xml
+
+# Disallow admin paths (if added in future)
+Disallow: /admin/
+Disallow: /api/
